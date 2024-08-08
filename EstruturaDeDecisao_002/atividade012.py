@@ -13,3 +13,38 @@
     Total de descontos              : R$  165,00
     Salário Liquido                 : R$  935,00
 """
+
+valorHora = float(input('Digite o valor da hora de trabalho: '))
+quantidadeHorasTr = float(input('Digite a quantidade de hora trabalhada no mês: '))
+salarioBruto = (valorHora * quantidadeHorasTr)
+
+
+def descontos(salarioBruto):
+    descontoSindicato = (salarioBruto / 100) * 3
+    fgts = (salarioBruto / 100) * 11
+    ir = 0
+    if salarioBruto <= 900:
+        salarioLiquido = salarioBruto - descontoSindicato
+        
+    elif salarioBruto <= 1500:
+        ir = (salarioBruto / 100) * 5
+        salarioLiquido = salarioBruto - descontoSindicato - ir
+        
+    elif salarioBruto <= 2500:
+        ir = (salarioBruto / 100) * 10
+        salarioLiquido = salarioBruto - descontoSindicato - ir
+        
+    else:
+        ir = (salarioBruto / 100) * 20
+        salarioLiquido = salarioBruto - descontoSindicato - ir
+        
+    imprimeDesconto(salarioBruto, descontoSindicato, ir, fgts, salarioLiquido)
+
+def imprimeDesconto(salarioBruto, descontoSindicato, ir, fgts, salarioLiquido):
+    print(f'Salario Bruto: {salarioBruto:.2f}')
+    print(f'Desconto Sindicato: { descontoSindicato:.2f}')
+    print(f'Desconto IR: {ir:.2f}')
+    print(f'FGTS: {fgts:.2f}')
+    print(f'Salario liquido: {salarioLiquido:.2f}')
+
+descontos(salarioBruto)

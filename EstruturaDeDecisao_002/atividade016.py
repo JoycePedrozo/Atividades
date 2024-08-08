@@ -5,3 +5,4 @@
     C) Se o delta calculado for igual a zero a equação possui apenas uma raiz real; informe-a ao usuário;
     D) Se o delta for positivo, a equação possui duas raiz reais; informe-as ao usuário;
 """
+
